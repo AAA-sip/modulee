@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+#stage1,
+#stage2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#screen1 {
+    z-index: 2;
+}
+
+#screen2 {
+    background-color: #ccc;
+    background-image: url('background-scene-1.png');
+    background-size: cover;
+}
+
+#avatar {
+    width: 50px;
+    height: 94px;
+    background-image: url('avatar.png');
+    /* Replace with the path to your avatar image */
+    background-size: cover;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#dialog-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.barrier {
+    width: 145px;
+    height: 230px;
+    background-image: url('quiz-barrier.png');
+    background-size: cover;
+    bottom: 0;
+    position: absolute; 
+}
+
+#barrier1{
+    right: 400px;
+}
+#barrier2{
+    right: 160px;
+}

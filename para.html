@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var parallaxContainer = document.querySelector('.parallax-container');
+        parallaxContainer.addEventListener('mousemove', function (event) {
+            var rotation = event.clientX / parallaxContainer.offsetWidth * 40 -
+                20; // Adjust the rotation angle based on mouse position
+            var parallaxElement = parallaxContainer.querySelector('.parallax-element');
+            parallaxElement.style.transform = 'translateZ(50px) rotateY(' + rotation +
+                'deg)'; // Apply the rotation angle to the parallax element
+        });
+    </script>
+    <style>
+        .parallax-container {
+            perspective: 1000px;
+            /* Set the perspective to create a 3D space */
+            height: 200px;
+            /* Set the height of the container */
+            overflow: hidden;
+            /* Hide any overflow from the container */
+        }
+
+        .parallax-element {
+            width: 100%;
+            /* Set the width of the element */
+            height: 100%;
+            /* Set the height of the element */
+            background-image: url('quiz-barrier.png');
+            /* Set the background image of the element */
+            background-size: cover;
+            /* Set the background size to cover the element */
+            transition: transform 0.3s ease-in-out;
+            /* Add a transition for smooth animation */
+        }
+
+        .parallax-container:hover .parallax-element {
+            transform: translateZ(50px) rotateY(20deg);
+            /* Apply the parallax effect on hover by translating and rotating the element */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax-container">
+        <div class="parallax-element">daa</div>
+    </div>
+
+
+</body>
+
+</html>
